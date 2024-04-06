@@ -78,10 +78,10 @@ class KMeans :
                 break
 
     def predict(self, x) :
-
+        '''Predicts the closest Centroid to each sample
+        '''
         return np.argmin([KMeans.get_distance(x, centroid) for centroid in self.centroids], axis=0)
 
-    
     def evaluate(self, X,
         labels,
         method:List[Literal["Silhouette", "Calinski", "wcss"]]
